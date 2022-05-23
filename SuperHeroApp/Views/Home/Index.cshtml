@@ -1,0 +1,30 @@
+﻿@model SuperHeroApp.Models.SuperHeroModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+<head>
+    <style>
+        .submit-btn{
+            background-color: lightgreen;
+            padding: 10px;
+        }
+        .submit-btn:hover{
+            background-color: transparent;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">
+       Your Ultimate Superhero Guild
+    </h1>
+    <form action="DisplayHero" method="post">
+        <label for="name">Superhero Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter the name of your superhero"><br><br />
+        <input class="submit-btn" type="submit" value="Submit" />
+
+    </form>
+    
+</div>

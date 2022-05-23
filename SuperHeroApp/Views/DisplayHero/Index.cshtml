@@ -1,0 +1,76 @@
+﻿@model SuperHeroApp.Models.SuperHeroModel
+@{
+    ViewData["Title"] = "DisplayHero";
+}
+<head>
+    <style>
+        ul{
+            list-style: none;
+        }
+        .titles{
+            font-size: 19px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<html>
+    <body>
+        <div class=text-center> 
+            <div class = "superhero__title"> The superhero name is: @ViewBag.user.results[0].Name </div>
+
+            <div class="appearance__container">
+                <div class="titles">Appearance</div>
+                <ul class = "appearance">
+                    <li> Gender: @ViewBag.user.results[0].Appearance.Gender </li>
+                    <li> Race: @ViewBag.user.results[0].Appearance.Race </li>
+                    <li> Eye Color: @ViewBag.user.results[0].Appearance.Eye_color </li>
+                    <li> Hair Color: @ViewBag.user.results[0].Appearance.Hair_color </li>
+                    
+                </ul>
+                <img src=@ViewBag.user.results[0].Image.Url alt="The image failed to load" width="300" height="300" />
+            </div> <br /><br />
+
+            <div className="powers__container">
+                <div class="titles">PowerStats</div>
+                <ul class = "powerstats">
+                    <li class="stat">Strength: @ViewBag.user.results[0].Powerstats.Strength </li>
+                    <li class="stat"> Intelligence: @ViewBag.user.results[0].Powerstats.Intelligence </li>
+                    <li class="stat"> Speed: @ViewBag.user.results[0].Powerstats.Speed </li>
+                    <li class="stat"> Durability: @ViewBag.user.results[0].Powerstats.Durability </li>
+                    <li class="stat"> Power: @ViewBag.user.results[0].Powerstats.Power </li>
+                    <li class="stat"> Combat: @ViewBag.user.results[0].Powerstats.Combat </li>
+                </ul>
+            </div><br /><br />
+
+            <div class="biography__container">
+                <div class="titles">Biography</div>
+                <ul class = "biography">
+                    <li> Full Name: @ViewBag.user.results[0].Biography.Fullname </li>
+                    <li> Alter-ego: @ViewBag.user.results[0].Biography.Alter_egos </li>
+                    <li> Place of Birth: @ViewBag.user.results[0].Biography.Place_of_birth </li>
+                    <li> First Appearance: @ViewBag.user.results[0].Biography.First_appearance </li>
+                    <li> Publisher: @ViewBag.user.results[0].Biography.Publisher </li>
+                    <li> Alignment @ViewBag.user.results[0].Biography.Alignment </li>
+                </ul>
+            </div><br /><br />
+
+            <div class="work__container">
+                <div class="titles">Work</div>
+                <ul class = "work">
+                    <li> Occupation: @ViewBag.user.results[0].Work.Occupation </li>
+                    <li> Base: @ViewBag.user.results[0].Work.Base </li>
+                </ul>
+            </div><br /><br />
+
+            <div class="connections__container">
+                <div class="titles">Connections</div>
+                <ul class = "connections">
+                    <li> Affiliation @ViewBag.user.results[0].Connections.Group_affiliation </li>
+                    <li> Relarives: @ViewBag.user.results[0].Connections.Relatives </li>
+                </ul>
+            </div><br /><br />
+
+        </div>
+    </body>
+</html>
